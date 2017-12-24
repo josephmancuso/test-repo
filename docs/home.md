@@ -1,1 +1,1 @@
-cmon now. its the home page
+This is the home page
