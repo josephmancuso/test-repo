@@ -1,1 +1,1 @@
-## more documentation in a subdirectory
+## more documentation in a subdirectory.
