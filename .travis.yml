@@ -4,6 +4,4 @@ python:
 - '3.7-dev'
 
 install:
-- pip install pycparser
-- pip install cryptography
-- pip install bcrypt
+- pip install bcrypt==3.1.4
