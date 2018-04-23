@@ -6,3 +6,4 @@ python:
 install:
 - pip install pycparser
 - pip install cryptography
+- pip install bcrypt
