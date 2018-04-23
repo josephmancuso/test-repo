@@ -4,5 +4,5 @@ python:
 - '3.7-dev'
 
 install:
-- pip install cryptography
 - pip install pycparser
+- pip install cryptography
