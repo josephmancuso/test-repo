@@ -2,7 +2,7 @@ version: "3"
 
 services:
   web:
-    image: jmancuso9/masonite
+    image: web
   rabbitmq:
     image: rabbitmq:latest
     ports:
