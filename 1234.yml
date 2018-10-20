@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+    web:
+        build: .
+    rabbitmq:
+        image: rabbitmq:latest
+        ports:
+            - 5672:5672
+    lb:
+        image: dockercloud/haproxy
+    links:
+        - web
+    ports:
+        - '80:80'
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
