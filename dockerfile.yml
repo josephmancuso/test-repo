@@ -1,7 +1,7 @@
 FROM python:3.6.6
 
 RUN pip install masonite-cli
-RUN mkdir -p /srv/site
+RUN mkdir -p /code/releases
 
 COPY ./release /code/releases/$release
 WORKDIR /code/releases/$release
