@@ -1,0 +1,13 @@
+FROM python:3.6.6
+
+RUN pip install masonite-cli
+RUN mkdir -p /srv/site
+
+COPY ./release /code/releases/$release
+WORKDIR /code/releases/$release
+RUN craft install
+RUN pip install gunicorn
+
+EXPOSE 80
+
+CMD gunicorn --bind 0.0.0.0:80 wsgi 
