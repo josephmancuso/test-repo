@@ -11,6 +11,8 @@ services:
       - DB_PASSWORD=
     links:
       - db
+    volumes:
+      - /var/run/postgresql:/var/run/postgresql
   rabbitmq:
     image: rabbitmq:latest
     ports:
