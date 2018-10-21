@@ -24,7 +24,5 @@ services:
   db:
     image: postgres
     restart: always
-    links:
-      - web
     ports:
       - '5432:5432'
