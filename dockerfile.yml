@@ -5,7 +5,7 @@ RUN mkdir -p /code/releases
 
 COPY ./release /code/releases/$release
 WORKDIR /code/releases/$release
-RUN craft install --no-key
+RUN pip install -r requirements.txt
 RUN pip install gunicorn
 
 EXPOSE 80
