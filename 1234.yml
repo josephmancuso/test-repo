@@ -11,6 +11,8 @@ services:
     image: rabbitmq:latest
     ports:
       - 5672:5672
+  links:
+    - db
   lb:
     image: dockercloud/haproxy
     links:
