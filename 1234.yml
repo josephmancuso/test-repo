@@ -5,6 +5,8 @@ services:
     image: web
     links:
       - db
+    depends_on:
+      - db
     environment:
       - APP_DEBUG=True
       - DB_DRIVER=postgres
