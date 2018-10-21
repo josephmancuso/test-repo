@@ -32,5 +32,5 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
-    # volumes:
-    #   - /var/lib/postgresql/data
+    volumes:
+      - /var/lib/postgresql/data
