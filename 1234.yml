@@ -3,6 +3,9 @@ version: "3"
 services:
   web:
     image: web
+    environment:
+      - APP_DEBUG=True
+      - DB_DRIVER=postgres
   rabbitmq:
     image: rabbitmq:latest
     ports:
