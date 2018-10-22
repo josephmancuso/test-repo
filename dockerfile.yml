@@ -10,4 +10,4 @@ RUN pip install gunicorn
 
 EXPOSE 80
 
-CMD gunicorn --bind 0.0.0.0:80 wsgi 
+CMD gunicorn --bind 0.0.0.0:80 wsgi:application
