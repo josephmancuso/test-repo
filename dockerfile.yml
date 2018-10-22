@@ -1,12 +1,12 @@
 FROM python:3.6.6
 
-RUN pip install masonite-cli
+RUN pip install masonite-cli gunicorn
 RUN mkdir -p /code/releases
 
-COPY ./release /code/releases
-WORKDIR /code/releases
+COPY ./release/requirements.txt /code/releases/requirements.txt
+WORKDIR /code/releases/
 RUN pip install -r requirements.txt
-RUN pip install gunicorn
+COPY ./release /code/releases
 
 EXPOSE 80
 
