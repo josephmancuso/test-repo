@@ -4,10 +4,10 @@ RUN pip install masonite-cli
 RUN mkdir -p /code/releases
 
 COPY ./release /code/releases/$release
+COPY ./venv /code/releases/$release/venv
 WORKDIR /code/releases/$release
-RUN pip install -r requirements.txt
 RUN pip install gunicorn
 
 EXPOSE 80
 
-CMD gunicorn --bind 0.0.0.0:80 wsgi 
+CMD source venv/bin/activate && gunicorn --bind 0.0.0.0:80 wsgi 
