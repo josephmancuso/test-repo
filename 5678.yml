@@ -38,4 +38,4 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - /var/lib/mysql:/var/lib/mysql
+      - /tmp/mysql:/var/lib/mysql
