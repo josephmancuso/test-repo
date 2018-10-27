@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  web:
+    image: web
+    links:
+      - db
+    depends_on:
+      - db
+    environment:
+      - APP_DEBUG=True
+      - DB_DRIVER=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=mysql
+      - DB_USERNAME=root
+      - DB_PASSWORD=mysql
+      - KEY=9CGsQWriKGGprcjU5XlHchWdwRxEYiwiesa_5Rd5XhA=
+  rabbitmq:
+    image: rabbitmq:latest
+    ports:
+      - 5672:5672
+  lb:
+    image: dockercloud/haproxy
+    links:
+      - web
+    ports:
+      - '80:80'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: root
+    ports:
+      - '3306:3306'
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
