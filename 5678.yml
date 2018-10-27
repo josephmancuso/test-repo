@@ -33,9 +33,10 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_PASSWORD: mysql
       MYSQL_DATABASE: mysql
       MYSQL_USER: root
     ports:
-      - '3306:3306'
+      - '5505:3306'
     volumes:
       - /tmp/mysql:/var/lib/mysql
