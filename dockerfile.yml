@@ -1,4 +1,4 @@
-FROM python:3.6.6
+FROM jmancuso9/masonite
 
 RUN pip install masonite-cli gunicorn
 RUN mkdir -p /code/releases
